@@ -1,0 +1,127 @@
+<Project>
+
+    <!-- https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build -->
+
+    <!-- version -->
+    <PropertyGroup>
+        <!-- Default version for local development builds -->
+        <!-- Production versions are set from git tags in CI/CD pipelines -->
+        <Version>0.0.0-devbuild</Version>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <InformationalVersion>0.0.0.0</InformationalVersion>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <!-- nuget package -->
+    <PropertyGroup>
+        <Description>The PPWCode NServiceBus Host library version I.</Description>
+        <Product>PPWCode</Product>
+        <Authors>dvdwouwe;rvdginste</Authors>
+        <Company>Peopleware NV</Company>
+        <Copyright>Copyright © Peopleware NV 2026</Copyright>
+
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/peopleware/net-ppwcode-nservicebus-host.git</RepositoryUrl>
+
+        <PackageTags>ppwcode nservicebus host dotnetcore netcore</PackageTags>
+        <PackageProjectUrl>https://github.com/peopleware/net-ppwcode-nservicebus-host</PackageProjectUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>ppw-logo-2.png</PackageIcon>
+
+        <PackageReleaseNotes>
+Changelog can be found in the documentation at:
+https://peopleware.github.io/net-ppwcode-docs/ppwcode-nservicebus-host-i/changelog.html
+        </PackageReleaseNotes>
+
+        <!-- SourceLink support -->
+        <!-- embed source code not in git repository -->
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <!-- embed all source code in the pdb, so not dependent from remote repo -->
+        <EmbedAllSources>true</EmbedAllSources>
+        <!-- publish the repository URL in the nuget package -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <!-- continuous integration build (false for local builds, set to true in CI/CD) -->
+        <ContinuousIntegrationBuild Condition="'$(ContinuousIntegrationBuild)' == ''">false</ContinuousIntegrationBuild>
+        <!-- include the pdb in the nuget package -->
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    </PropertyGroup>
+
+    <!-- include supporting files in NuGet package -->
+    <ItemGroup>
+        <None Include="../../assets/ppw-logo-2.png" Pack="true" PackagePath="/" Visible="false"/>
+        <None Include="../../LICENSE" Pack="true" PackagePath="/" Visible="false"/>
+        <None Include="../../NOTICE" Pack="true" PackagePath="/" Visible="false"/>
+        <None Include="../../README.md" Pack="true" PackagePath="/" Visible="false"/>
+    </ItemGroup>
+
+    <!-- build configuration -->
+    <PropertyGroup>
+        <!-- Target frameworks -->
+        <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+
+        <!-- Configurations -->
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+
+        <!-- Generate documentation files -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <!-- content -->
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+
+        <!-- use package lock files -->
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <RestoreLockedMode>true</RestoreLockedMode>
+
+        <!-- to avoid automatically getting the reference assemblies -->
+        <!-- note: the reference assemblies are added explicitly -->
+        <!-- to avoid differences in the package lock files across OSes -->
+        <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    </PropertyGroup>
+
+    <!-- set default for configuration -->
+    <PropertyGroup Condition=" '$(Configuration)' == '' ">
+        <Configuration>Debug</Configuration>
+    </PropertyGroup>
+
+    <!-- set default for platform -->
+    <PropertyGroup Condition=" '$(Platform)' == '' ">
+        <Platform>AnyCPU</Platform>
+    </PropertyGroup>
+
+    <!-- compiler configuration -->
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <WarningLevel>4</WarningLevel>
+        <NoWarn>1591;1592;1573;1571;1570;1572;1701;1702;</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningsAsErrors/>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+        <LangVersion>14.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>true</ImplicitUsings>
+    </PropertyGroup>
+
+    <!-- properties for debug configuration -->
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <DefineConstants>DEBUG;TRACE;CONTRACTS_PRE;CONTRACTS_POST;CONTRACTS_INVARIANT;CONTRACTS_ASSERT</DefineConstants>
+    </PropertyGroup>
+
+    <!-- properties for release configuration -->
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>true</Optimize>
+        <DefineConstants>TRACE;CONTRACTS_PRE;CONTRACTS_POST;CONTRACTS_INVARIANT;CONTRACTS_ASSERT</DefineConstants>
+    </PropertyGroup>
+
+</Project>

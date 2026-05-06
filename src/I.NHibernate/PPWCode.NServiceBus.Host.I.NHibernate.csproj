@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\common.props" />
+
+    <ItemGroup>
+        <!-- NHibernate -->
+        <PackageReference Include="NHibernate" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../I/PPWCode.NServiceBus.Host.I.csproj" />
+    </ItemGroup>
+
+</Project>
