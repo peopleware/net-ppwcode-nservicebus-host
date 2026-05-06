@@ -1,0 +1,29 @@
+# User-specific files
+*.suo
+*.user
+
+# Visual Studio
+.vs/
+
+# vs launch settings
+/src/*/Properties/launchSettings.json
+
+# JetBrains IDEs
+.idea/
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet Packages
+*.nupkg
+
+# output folders directory
+/src/*/obj
+/src/*/bin
+
+# test reports
+/test-reports
+
+# scratch
+/scratch
