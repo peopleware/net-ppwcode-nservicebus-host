@@ -1,0 +1,5 @@
+name: ppwcode-nservicebus-host-i
+version: ~
+title: PPWCode.NServiceBus.Host.I
+nav:
+  - modules/ROOT/nav.adoc

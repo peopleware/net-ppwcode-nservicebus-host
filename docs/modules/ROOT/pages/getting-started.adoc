@@ -1,0 +1,38 @@
+= Getting started
+
+// helper attributes for package links
+:nuget-main: https://www.nuget.org/packages/PPWCode.NServiceBus.Host.I/
+:nuget-efc: https://www.nuget.org/packages/PPWCode.NServiceBus.Host.I.EntityFrameworkCore/
+:nuget-nhibernate: https://www.nuget.org/packages/PPWCode.NServiceBus.Host.I.NHibernate/
+:main: PPWCode.NServiceBus.Host.I
+:efc: PPWCode.NServiceBus.Host.I.EntityFrameworkCore
+:nhibernate: PPWCode.NServiceBus.Host.I.NHibernate
+
+== Add NuGet package
+
+All libraries that are part of the `PPWCode.NServiceBus.Host.I` are published on NuGet.
+
+The following packages are available:
+
+- {nuget-main}[{main}], base library
+- {nuget-efc}[{efc}], support for Entity Framework Core
+- {nuget-nhibernate}[{nhibernate}], support for NHibernate
+
+
+You can use your IDE to add it as a dependency to your project, or manually add it in the `.csproj` file.  This would look similar to the following:
+
+
+=== Entity Framework Core
+
+[source,xml]
+----
+include::example$project-efc.csproj[]
+----
+
+
+=== NHibernate
+
+[source,xml]
+----
+include::example$project-nhibernate.csproj[]
+----

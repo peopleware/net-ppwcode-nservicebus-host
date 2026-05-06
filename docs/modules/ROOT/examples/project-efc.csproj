@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!-- ... -->
+
+    <ItemGroup>
+        <!-- nuget package dependencies -->
+        <PackageReference Include="PPWCode.NServiceBus.Host.I" Version="1.0.0" />
+        <PackageReference Include="PPWCode.NServiceBus.Host.I.EntityFrameworkCore" Version="1.0.0" />
+    </ItemGroup>
+
+    <!-- ... -->
+</Project>
