@@ -3,6 +3,8 @@
     <Import Project="..\common.props" />
 
     <ItemGroup>
+        <PackageReference Include="PPWCode.Vernacular.NHibernate.IV" />
+
         <!-- NHibernate -->
         <PackageReference Include="NHibernate" />
     </ItemGroup>

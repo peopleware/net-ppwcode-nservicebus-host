@@ -21,18 +21,24 @@
     <Choose>
         <When Condition="'$(TargetFramework)' == 'net8.0'">
             <ItemGroup>
+                <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.*" />
+                <PackageVersion Include="Microsoft.Extensions.Logging" Version="8.*" />
                 <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.*"/>
                 <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.*"/>
             </ItemGroup>
         </When>
         <When Condition="'$(TargetFramework)' == 'net9.0'">
             <ItemGroup>
+                <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.*" />
+                <PackageVersion Include="Microsoft.Extensions.Logging" Version="9.*" />
                 <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.*"/>
                 <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.*"/>
             </ItemGroup>
         </When>
         <Otherwise>
             <ItemGroup>
+                <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.*" />
+                <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.*" />
                 <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.*"/>
                 <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.*"/>
             </ItemGroup>
@@ -43,6 +49,7 @@
     <ItemGroup>
         <!-- PPWCode -->
         <PackageVersion Include="PPWCode.Vernacular.Contracts.I" Version="1.*" />
+        <PackageVersion Include="PPWCode.Vernacular.NHibernate.IV" Version="1.*-*" />
 
         <!-- NServiceBus -->
         <PackageVersion Include="NServiceBus" Version="9.*" />
