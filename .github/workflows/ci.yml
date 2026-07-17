@@ -38,14 +38,14 @@ jobs:
       - name: Restore dependencies
         shell: bash
         run: |
-          dotnet restore PPWCode.NServiceBus.Host.sln \
+          dotnet restore PPWCode.NServiceBus.Host.slnx \
             --locked-mode \
             -p:Configuration=Release
 
       - name: Build
         shell: bash
         run: |
-          dotnet build PPWCode.NServiceBus.Host.sln \
+          dotnet build PPWCode.NServiceBus.Host.slnx \
             --configuration Release \
             --no-restore \
             -p:ContinuousIntegrationBuild=true
