@@ -12,6 +12,16 @@ This file is translated into markdown and used for the release notes in the GitH
 * Supported targets: `.NET 8.0`, `.NET 9.0`, `.NET 10.0`
 * Code built using nullable reference types
 * Use of Microsoft attributes for nullable static analysis
+* Switched the solution file from `.sln` to `.slnx` format
+* Updated the .NET SDK version to `10.0.302`
+* Added `gen5` to the NuGet package tags
+* Generated portable debug symbols for both Debug and Release configurations
+* Changed test and analyzer package versions to floating versions
+* Remove Microsoft.SourceLink.GitHub from global package references
+* Remove pre-release version suffix
+* Update NServiceBus package references to use floating versions based on target framework
+* Updated test project dependencies to the latest available versions
+
 
 === Note: breaking change after prerelease
 * New package `PPWCode.AspNetCore.Host.I.EntityFrameworkCore`
