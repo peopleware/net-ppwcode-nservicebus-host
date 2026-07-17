@@ -49,7 +49,7 @@
     <ItemGroup>
         <!-- PPWCode -->
         <PackageVersion Include="PPWCode.Vernacular.Contracts.I" Version="1.*" />
-        <PackageVersion Include="PPWCode.Vernacular.NHibernate.IV" Version="1.*-*" />
+        <PackageVersion Include="PPWCode.Vernacular.NHibernate.IV" Version="1.*" />
 
         <!-- NServiceBus -->
         <PackageVersion Include="NServiceBus" Version="9.*" />
