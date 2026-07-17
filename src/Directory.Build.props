@@ -23,7 +23,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/peopleware/net-ppwcode-nservicebus-host.git</RepositoryUrl>
 
-        <PackageTags>ppwcode nservicebus host dotnetcore netcore</PackageTags>
+        <PackageTags>ppwcode nservicebus host dotnetcore netcore gen5</PackageTags>
         <PackageProjectUrl>https://github.com/peopleware/net-ppwcode-nservicebus-host</PackageProjectUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
